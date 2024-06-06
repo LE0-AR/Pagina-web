@@ -115,7 +115,6 @@ button, a {
   display: flex;
   flex-direction: column;
 }
-
 /* ************* NAVBAR ************* */
 .container-navbar {
   background-color: var(--primary-color);
@@ -126,7 +125,6 @@ button, a {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
-  
 }
 
 .navbar .fa-bars {
@@ -136,10 +134,12 @@ button, a {
 .menu {
   display: flex;
   gap: 2rem;
+  position: relative; /* Asegura que el submenú se posicione correctamente */
 }
 
 .menu li {
   list-style: none;
+  position: relative; /* Necesario para el posicionamiento absoluto del submenú */
 }
 
 .menu a {
@@ -147,7 +147,6 @@ button, a {
   font-size: 1.3rem;
   color: var(--background-color);
   font-weight: 600;
-  text-transform: case;
   position: relative;
 }
 
@@ -212,15 +211,17 @@ button, a {
   font-size: 2rem;
   color: #ffffff;
 }
-/*Menu*/
+
+/* Menu */
 .nav-submenu {
   position: absolute;
-  display: none; 
+  display: none;
   background: linear-gradient(90deg, rgb(94, 92, 92) 100%, rgba(102,101,101,1) 10%);
-
-  left: 100%; 
+  left: 100%;
+  top: -1px; /* Ajustado para alinear correctamente el submenú */
   opacity: 0;
   width: 50%;
+  height: 258px;
   transition: opacity 0.3s ease, visibility 0.3s ease;
   border: 1px solid #ffffff;
 }
@@ -236,14 +237,14 @@ button, a {
 }
 
 .main-category {
-  cursor: pointer; 
-  
+  cursor: pointer;
 }
 
 .main-category i {
   position: absolute;
   font-size: 1.5rem;
 }
+
 /* ********************************** */
 /*               BANNER               */
 /* ********************************** */
@@ -254,7 +255,8 @@ button, a {
   max-height: 100%;
   background-size: cover;
   background-position: center;
-  position: none;
+
+  
 }
 
 .slider {
@@ -267,6 +269,11 @@ button, a {
   display: none;
   overflow: hidden;
   position: relative;
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
 }
 
 .myslide.active {
@@ -280,7 +287,7 @@ button, a {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(
+ /* background-color: rgba(
     0,
     0,
     0,
@@ -293,68 +300,57 @@ button, a {
 }
 
 /* Estilos para el enlace "Leer más" */
-.content-banner a {
-  margin-top: 1rem;
-  text-decoration: none;
-  color: #310505;
-  background-color: var(--primary-color);
-  display: inline-block;
-  padding: 1rem 3rem;
-  border-radius: 3rem;
-  transition: background-color 0.3s ease;
-}
 
-.content-banner a:hover {
-  background-color: #fd0000; /* Cambia el color de fondo al pasar el ratón */
-}
 
 .content-banner {
-  max-width: 90rem;
-  margin: 0 auto;
+  width: 500px;
+  margin: 0   ;
   padding: 25rem 0;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 25%;
   transform: translate(-50%, -50%);
-  text-align: center;
+
 }
-/* Estilos para el enlace "Leer más" */
 .content-banner a {
-  margin-top: 1rem;
+  margin-top: 10px;
+  margin-left: 10px;
   text-decoration: none;
   color: #fff;
-  background-color: var(--primary-color);
   display: inline-block;
-  padding: 1rem 3rem;
-  text-transform: case;
-  border-radius: 3rem;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; 
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+  font-size: 14px;
+  align-items: center;
+  justify-content: center;
+  padding: 2%;
+  border-radius: 0px;
+  width: 100px;
+  height: 40px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  border: 2px solid #fffefe; /* Añadir borde de 2px */
+  background-color: transparent; /* Fondo transparente */
 }
 
 .content-banner a:hover {
-  background-color: #f95609;
-  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); 
+  background-color: #fff;
+  color: #000;
+  border-color: #000; 
 }
+
 
 .content-banner h2 {
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 20px;
+  width: 500px;
   padding: 2%;
-}
-.content-banner p{
-  text-transform: uppercase;
-  color: #fff;
-  /*color: #dad72b;*/
-  font-size: 3rem;
-  padding: 2%;
-  text-shadow: 3px 3px 3px rgba(249, 86, 9, 1.0); 
 }
 
-.content-banner a {
+.content-banner p{
+ 
   color: #fff;
-  font-size: 1rem;
+  font-size: 36px;
+  padding: 2%;
 }
+
 .prev,
 .next {
   position: absolute;
@@ -499,7 +495,8 @@ button, a {
 
 .footer {
   background: rgb(0,0,0);
-background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(28,27,27,1) 37%, rgba(84,84,84,1) 62%, rgb(66, 65, 65) 100%);
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(28,27,27,1) 37%, rgba(84,84,84,1) 62%, rgb(66, 65, 65) 100%);
+  margin-top: 100px;
 }
 
 .container-footer {
@@ -687,8 +684,9 @@ background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(28,27,27,1) 37%, rgba(
   }
 
   .content-banner {
+    font-size: 14px;
     max-width: 50rem;
-    margin: 0 auto;
+    left: 50%;
     padding: 25rem 0;
   }
 
@@ -757,10 +755,13 @@ background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(28,27,27,1) 37%, rgba(
 
 /* Media query para pantallas pequeñas (por ejemplo, dispositivos móviles) */
 @media (max-width: 768px) {
+  
+  .dot{
+    margin-top: 70px;
+  }
   .prev,
   .next {
-    font-size: 30px; /* Reduce el tamaño de fuente para pantallas pequeñas */
-    padding: 10px; /* Reduce el padding para pantallas pequeñas */
+    display: none;
   }
 }
 
@@ -880,10 +881,10 @@ background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(28,27,27,1) 37%, rgba(
 
 @media only screen and (max-width: 768px) {
   .dotsbox {
-    outline: none; /* Elimina el resaltado en dispositivos móviles */
+    outline: none; 
   }
 }
-/* Estilos pra menu responsivo */
+
 
 .menu {display: flex;}
 .menu li {padding-left: 30px;}
@@ -948,4 +949,7 @@ background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(28,27,27,1) 37%, rgba(
     .menu li a {padding: 10px;}
     .open-menu , .close-menu {display: block;}
     #check:checked ~ .menu {right: 0;}
+}
+.main-content{
+  margin-top: 150px;
 }
